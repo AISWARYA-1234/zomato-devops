@@ -15,7 +15,9 @@ pipeline {
         }
         stage ("Git Checkout") {
             steps {
-                git 'https://github.com/AISHWARYA-1234/zomato-devops.git'
+                git branch: 'main',
+            	    credentialsId: 'github-pat',
+            	    url: 'https://github.com/AISWARYA-1234/zomato-devops.git'
             }
         }
         stage("Sonarqube Analysis"){
