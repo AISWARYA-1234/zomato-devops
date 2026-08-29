@@ -24,7 +24,7 @@ pipeline {
             steps{
                 withSonarQubeEnv('sonar-server') {
                     sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=zomato \
-                    -Dsonar.projectKey=zomato '''
+                    -Dsonar.projectKey=zomato -Dsonar.nodejs.executable=/usr/bin/node '''
                 }
             }
         }
